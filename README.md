@@ -2,7 +2,8 @@
 
 ## Hacktoberfest is for everyone!..
 
-#### <br> 📢 Register Yourself for Hacktoberfest and make four pull requests between October 1st-31st to grab free SWAGS! 🔥
+#### <br> 
+🔥 Register Yourself for Hacktoberfest and make four pull requests between October 1st-31st to grab free SWAGS! 🔥
 
 <br/>
 
