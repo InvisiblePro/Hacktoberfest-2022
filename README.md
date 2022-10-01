@@ -53,6 +53,6 @@ Don't just pull request for sake! All the work should be loyal and being in work
 
 </center>
 
-Please check first and then send your codes with discription.
+Please check first and then send your codes with description.
 
 ### "All the best for the event" ✨
