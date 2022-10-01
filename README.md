@@ -1,9 +1,10 @@
-<h1 align=center> Hacktoberfest 2022</h1>
+<h1 align='center'> Hacktoberfest 2022</h1>
 
-## Hacktoberfest is for everyone!..
+<h2 align='center'> Hacktoberfest is for everyone!..</h2>
 
-### <br> 
-🔥 Register Yourself for Hacktoberfest and make four pull requests between October 1st-31st to grab free SWAGS! 🔥
+<br>
+
+### 🔥 Register Yourself for Hacktoberfest and make four pull requests between October 1st-31st to grab free SWAGS! 🔥
 
 <br/>
 
