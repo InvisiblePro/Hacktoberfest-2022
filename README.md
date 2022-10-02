@@ -62,11 +62,6 @@ Please check first and then send your codes with description.
 
 <br>
 
-### Contributors :
-<a href="https://github.com/InvisiblePro/Hacktoberfest-2022/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=InvisiblePro/Hacktoberfest-2022" />
-</a>
-
 <br>
 <br>
 
