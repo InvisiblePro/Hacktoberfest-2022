@@ -16,10 +16,13 @@
 ## IMPORTANT!
 - Dont forget to go through [CODE_OF_CONDUCT](https://github.com/InvisiblePro/Hacktoberfest-2022/blob/main/CODE_OF_CONDUCT.md) and [CONTRIBUTING.MD](https://github.com/InvisiblePro/Hacktoberfest-2022/blob/main/CONTRIBUTING.md)
 
+- Everyone must fill the Comments while submitting their PR!! consider this as compulsory otherwise PR wont be accpeted!!
+
 - Any PR voilating CODE_OF_CONDUCT won't be accepcted and will be labelled as 'bug'
 
 - #HappyHacking!!
 
+<h3 align=right>---- BY ORDER InvisiblePro</h3>
 
 ## What's for you? 
 
