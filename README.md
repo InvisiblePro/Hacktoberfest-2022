@@ -14,7 +14,7 @@
 <br/>
 
 ## IMPORTANT!
-- Dont forget to go through [CODE_OF_CONDUCT](https://github.com/InvisiblePro/Hacktoberfest-2022/blob/main/CODE_OF_CONDUCT.md) and [CONTRIBUTING.MD](https://github.com/InvisiblePro/Hacktoberfest-2022/blob/main/CONTRIBUTING.md)
+- Dont forget to go through [CODE_OF_CONDUCT](https://github.com/InvisiblePro/Hacktoberfest-2022/blob/main/CODE_OF_CONDUCT.md), [CONTRIBUTING.MD](https://github.com/InvisiblePro/Hacktoberfest-2022/blob/main/CONTRIBUTING.md) and [SECURITY.MD](https://github.com/InvisiblePro/Hacktoberfest-2022/blob/main/SECURITY.md)
 
 - Everyone must fill the Comments while submitting their PR!! consider this as compulsory otherwise PR wont be accpeted!!
 
