@@ -1,4 +1,4 @@
-# Number guessing game in python
+# A number guessing game in python
 
 import random
 
