@@ -1,3 +1,5 @@
+# Code by @Idhant-6
+
 from replit import clear
 from art import logo
 
