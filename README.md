@@ -10,6 +10,7 @@
 
 ### 🔥 Register Yourself for Hacktoberfest and make four pull requests between October 1st-31st to grab free SWAGS! 🔥
 
+### Please star the Repo if you like it 😉✨
 <br/>
 
 ## What's for you? 
