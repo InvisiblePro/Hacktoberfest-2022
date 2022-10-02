@@ -22,7 +22,7 @@
 
 - #HappyHacking!!
 
-<h3 align=right>---- BY ORDER InvisiblePro</h3>
+<h3 align=right>---- InvisiblePro</h3>
 
 ## What's for you? 
 
