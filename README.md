@@ -13,6 +13,14 @@
 ### Please star the Repo if you like it 😉✨
 <br/>
 
+## IMPORTANT!
+- Dont forget to go through [CODE_OF_CONDUCT](https://github.com/InvisiblePro/Hacktoberfest-2022/blob/main/CODE_OF_CONDUCT.md) and [CONTRIBUTING.MD](https://github.com/InvisiblePro/Hacktoberfest-2022/blob/main/CONTRIBUTING.md)
+
+- Any PR voilating CODE_OF_CONDUCT won't be accepcted and will be labelled as 'bug'
+
+- #HappyHacking!!
+
+
 ## What's for you? 
 
 - Get involved in the contribution and benchmark your skills and talents!! ✨✨
