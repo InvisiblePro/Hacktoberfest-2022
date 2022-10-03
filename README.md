@@ -1,3 +1,8 @@
+<br>
+<head>
+<link rel='icon' href=".github/logo.jpeg"/>
+</head>
+
 <h1 align='center'> Hacktoberfest 2022</h1>
 
 <h2 align='center'> Hacktoberfest is for everyone!..</h2>
