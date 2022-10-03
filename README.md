@@ -1,4 +1,4 @@
-<link rel=icon href=".github/logo.jpg">
+<link rel=icon href=".github/logo.jpeg">
 <h1 align='center'> Hacktoberfest 2022</h1>
 
 <h2 align='center'> Hacktoberfest is for everyone!..</h2>
