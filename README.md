@@ -16,6 +16,7 @@
 ### 🔥 Register Yourself for Hacktoberfest and make four pull requests between October 1st-31st to grab free SWAGS! 🔥
 
 ### Please star the Repo if you like it 😉✨
+### Please go through this Poll about your experience with this [Repo](https://github.com/InvisiblePro/Hacktoberfest-2022/discussions/44)
 <br/>
 
 ## IMPORTANT!
