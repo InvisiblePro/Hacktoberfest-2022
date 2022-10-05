@@ -55,6 +55,16 @@ currently being supported with security updates.
 | >go1.16.x | :x:                |
 
 
+### Scala
+
+| Version   | Supported          |
+|-----------|--------------------|
+| 2.13.9  | :white_check_mark: |
+| 2.13.8 | :white_check_mark: |
+| 2.13.7  | :white_check_mark: |
+| >2.13.6 | :x:                |
+
+
 ## Reporting a Vulnerability
 
 This is the basic requirement of the versions of the respective langauges for the stability in a varied range of systems without any errors.
