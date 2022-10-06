@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calci.css">
+    <script src="calci.js"></script>
+</head>
+
+<body>
+    <section>
+
+        <input type="text" id="calculate">
+
+
+        <table>
+            <tbody>
+                <tr>
+                    <td><button onclick="Selected('(')">(</button></td>
+                    <td><button onclick="Selected(')')">)</button></td>
+                    <td><button onclick="clr()">C</button></td>
+                    <td><button onclick="Selected('%')">%</button></td>
+
+                </tr>
+                <tr>
+                    <td><button onclick="Selected('7')">7</button></td>
+                    <td><button onclick="Selected('8')">8</button></td>
+                    <td><button onclick="Selected('9')">9</button></td>
+                    <td><button onclick="Selected('X')">X</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="Selected('4')">4</button></td>
+                    <td><button onclick="Selected('5')">5</button></td>
+                    <td><button onclick="Selected('6')">6</button></td>
+                    <td><button onclick="Selected('-')">-</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="Selected('1')">1</button></td>
+                    <td><button onclick="Selected('2')">2</button></td>
+                    <td><button onclick="Selected('3')">3</button></td>
+                    <td><button onclick="Selected('+')">+</button></td>
+                </tr>
+
+                <tr>
+                    <td><button onclick="Selected('0')" class="zero">0</button></td>
+                    <td><button onclick="Selected('.')" class="dot">.</button></td>
+                    <td><button onclick="Selected('/')">/</button></td>
+                    <td><button onclick="solve()" class="equaltoo">=</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</body>
+
+</html>

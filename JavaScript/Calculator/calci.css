@@ -1,0 +1,112 @@
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+
+body {
+
+    
+    background-image: url(https://t3.ftcdn.net/jpg/02/16/53/96/360_F_216539624_iy8PCnvHwEfVt9Xd18EgBJoGZuJ0qy0P.jpg);
+}
+
+td {
+    border: 0px;
+    width: 40px;
+    height: 30px;
+    margin: -2px;
+}
+
+button {
+
+    display: flex;
+    border: 0px solid black;
+    padding: 30px;
+    padding-left: 30px;
+    align-items: center;
+    justify-content: flex-start;
+    padding-right: 30px;
+    background-color: white;
+    margin: -2px;
+    font-size: medium;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: -1px;
+
+
+}
+
+.zero {
+
+    border-bottom-left-radius: 15px;
+}
+
+
+table {
+
+
+    background-color: white;
+    margin: 75px;
+    box-shadow: 5px 5px 5px grey;
+    margin-top: 1px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: 2px solid black;
+    width: 303px;
+    /* margin-top:25px ; */
+
+
+}
+
+.dot {
+    font-size: larger;
+    font-weight: bold;
+}
+
+.equaltoo {
+
+    background-color: #fda22c;
+    border-radius: 10px;
+
+}
+
+
+
+
+button:hover {
+
+    background-color: #e5e5e5;
+}
+
+
+
+
+input {
+
+    width: 300px;
+    /* margin-top: 75px; */
+    height: 50px;
+    box-shadow: 5px 5px 5px grey;
+    border: 0px;
+    background-color: black;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-top: 130px;
+
+
+}
+
+
+.equaltoo:hover {
+
+    background-color: #f48c06;
+    cursor: pointer;
+}
