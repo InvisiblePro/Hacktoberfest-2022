@@ -26,7 +26,7 @@ if answer.lower()=='yes':
     else:
         print('Wrong Answer :(')
  
-print('Thankyou for Playing this small quiz game, you attempted',score,"questions correctly!")
+print('Thankyou for Playing the Hacktoberfest quiz game, you attempted',score,"questions correctly!")
 mark=(score/total_questions)*100
 print('Marks obtained:',mark)
 print('BYE!')
