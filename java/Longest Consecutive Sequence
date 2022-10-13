@@ -1,0 +1,89 @@
+import java.util.*;
+
+public class Solution {
+	public static ArrayList<Integer> longestConsecutiveIncreasingSequence(int[] arr) {
+		
+        
+        // adding all the values in the hash function;
+        HashMap<Integer, Boolean> map = new HashMap<>();
+        for(int i: arr)
+            map.put(i, true);
+        
+        // here I did the main operation of this qustion
+        // In this question we will check and calculate length according if the first element of the array is the part of the
+        // longest subsequence or not
+        
+        // if the element is the part of the longest list and during the traversal I have gone that element then I set 
+        // its boolean expersion to false;
+        
+        int startIndexValue = -1;
+        int maxLength = 0;
+        for(int j=0; j<arr.length; j++){
+            
+            int i = arr[j];
+            
+            int temp = i;
+            int length = 0;
+            while(map.containsKey(temp) && map.get(temp) == true){
+                length++;
+                map.put(temp, false);
+                temp++;
+            }
+            
+            temp = i-1;
+            while(map.containsKey(temp) && map.get(temp) == true){
+                length++;
+        		map.put(temp, false);
+                temp--;
+            }
+            
+            temp++;
+             
+            if(maxLength < (length)){
+                maxLength = length;
+                startIndexValue = temp;
+            }
+            
+            
+            // while performing the operation if we encounter 2 lists having same length 
+            // then we need to return the list whose element comes first;
+            // for performing this task I must have the indices of both of lists' starting elements;
+            else if(maxLength == length ){
+                int index1 = 0, index2 = 0;
+                
+                for(int k=0; k<arr.length; k++){
+                    if(arr[k] == startIndexValue){
+                        index1 = k;
+                        break;
+                    }
+                }
+                
+                for(int k=0; k<arr.length; k++){
+                    if(arr[k] == temp){
+                        index2 = k;
+                        break;
+                    }
+                }
+                
+                if(index1 > index2){
+                    startIndexValue = temp;
+                    maxLength = length;
+                }
+            }
+            
+        }
+        
+        
+        ArrayList<Integer> list = new ArrayList<>();
+        // for(int i=0; i<maxLength; i++){
+        //     list.add(startIndexValue);
+        //     startIndexValue++;
+        // }
+        
+        list.add(startIndexValue);
+        list.add(startIndexValue + maxLength - 1);
+        
+        return list;
+        
+	}
+}
