@@ -1,0 +1,60 @@
+public class solution {
+          public static char[] numberOptions(int n){
+
+	switch(n)
+        {
+            case 2: 
+            char options2[]={'a','b','c'};
+            return options2;
+            case 3: 
+            char options3[]={'d','e','f'};
+            return options3;
+            case 4: 
+            char options4[]={'g','h','i'};
+            return options4;
+            case 5:
+            char options5[]={'j','k','l'};
+            return options5;
+            case 6: 
+            char options6[]={'m','n','o'};
+            return options6;
+            case 7: 
+            char options7[]={'p','q','r','s'};
+            return options7;
+            case 8:
+            char options8[]={'t','u','v'};
+            return options8;
+            case 9: 
+            char options9[]={'w','x','y','z'};
+            return options9;
+            
+        default:
+            char options[]={'\0'};
+            return options;
+    
+            //return new char[0];
+    }
+
+	}
+    public static void printKeypad(int input,String outputsofar){
+        if(input==0){
+            System.out.println(outputsofar);
+            return;
+        }
+        int lastno=input%10;
+        int smallno=input/10;
+        char options[]=numberOptions(lastno);
+       
+        for(int i=0; i<options.length; i++){
+            printKeypad(smallno, options[i]+outputsofar);
+        }
+        
+        
+    }
+
+	public static void printKeypad(int input){
+		
+		String outputsofar="";
+    	printKeypad(input,outputsofar);
+	}
+}
