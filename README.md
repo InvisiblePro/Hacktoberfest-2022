@@ -84,5 +84,9 @@ Please check first and then send your codes with description.
 
 
 <br>
+<br/>
+
+## Thank You all brilliant minds!! 
+### This was an amazing experience with you all!... Wanna see you all in upcoming Hacktoberfest events 💫💫
 
 [<img src="https://img.shields.io/badge/GitHub-InvisiblePro-blue?logo=github&style=for-the-badge" alt="InvisiblePro">](https://github.com/InvisiblePro)
