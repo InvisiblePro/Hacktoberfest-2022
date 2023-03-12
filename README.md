@@ -69,7 +69,7 @@ Go through the checklist on the pull request template to guarantee your submissi
 
 <center>
 
-*<b>Disclaimer:</b>* 
+<b><i>Disclaimer:</i></b> 
 
 Don't just pull request for sake! All the work should be loyal and being in working condition....!
 
