@@ -71,6 +71,10 @@ public class Work {
         return isReviewed;
     }
 
+    public void getReviewed() {
+        isReviewed = true;
+    }
+
     public boolean isCorrect() {
         return isCorrect;
     }

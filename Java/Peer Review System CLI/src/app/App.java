@@ -65,9 +65,11 @@ public class App {
                                 student.doWork(wId, answer);
                             }
                             if (stuChoice.equals("5")) {
-
+                                schoolPeerReviewSystem.displayAllStudents();
+                                System.out.print("Select student Id: ");
+                                String sId = scanner.nextLine();
+                                student.reviewOtherWorks(schoolPeerReviewSystem, scanner, sId);
                             }
-
                         } while (!stuChoice.equals("6"));
 
                     } else {

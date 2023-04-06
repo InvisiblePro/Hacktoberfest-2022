@@ -2,6 +2,7 @@ package models;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import errors.NotFoundException;
 import utils.Search;
@@ -28,8 +29,44 @@ public class Student extends SchoolPerson {
         }
     }
 
-    public void reviewOtherWorks() {
+    public void reviewOtherWorks(PeerReviewSystem system, Scanner scanner, String sId) {
+        try {
+            Student other = system.getStudentById(sId);
+            other.viewUnreviewedWorks();
+            System.out.print("Review Work Id: ");
+            String wId = scanner.nextLine();
+            Work work = Search.getWorkById(wId, other.getWorks());
 
+            System.out.println("Is Correct Answer?");
+            System.out.println("1. Correct");
+            System.out.println("2. Incorrect");
+
+            String choice;
+            do {
+                System.out.print("Choice: ");
+                choice = scanner.nextLine();
+                if (choice.equals("1")) {
+                    work.setCorrect(true);
+
+                } else if (choice.equals("2")) {
+                    work.setCorrect(false);
+                } else {
+                    System.out.println("Invalid choice try again.");
+                }
+
+            } while (!choice.equals("1") && !choice.equals("2"));
+
+            work.setReviewer(this);
+            work.getReviewed();
+
+        } catch (NotFoundException e) {
+            System.out.println(e.getLocalizedMessage());
+            System.out.println("---Abort Review Process---");
+        }
+    }
+
+    public List<Work> getWorks() {
+        return works;
     }
 
     public void addWork(Work work) {
@@ -56,6 +93,14 @@ public class Student extends SchoolPerson {
     public void viewDoneWorks() {
         for (Work work : works) {
             if (work.isAnswered()) {
+                System.out.println(work.toString());
+            }
+        }
+    }
+
+    public void viewUnreviewedWorks() {
+        for (Work work : works) {
+            if (work.isAnswered() && !work.isReviewed()) {
                 System.out.println(work.toString());
             }
         }
