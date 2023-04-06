@@ -99,7 +99,7 @@ public class Work {
         String result = "";
         final String dashs = "----------".repeat(3);
         result += "Id: " + wId + "\n";
-        result += "Creator: Information \n" + creator.toString();
+        result += "--Creator Information--\n" + creator.toString();
         result += "Question: " + question + "\n";
 
         if (isAnswered) {
@@ -108,6 +108,7 @@ public class Work {
             result += dashs;
             result += "--This work is NOT DONE yet.--";
             result += dashs;
+            result += "\n";
             return result;
         }
 
@@ -117,6 +118,8 @@ public class Work {
             result += dashs;
             result += "--This work is NOT REVIEWED yet.--";
             result += dashs;
+            result += "\n";
+            return result;
         }
 
         if (isPeerReviewValidatedByTeacher) {
@@ -125,6 +128,7 @@ public class Work {
             result += dashs;
             result += "--This work is NOT VALIDATED By Teacher yet.--";
             result += dashs;
+            result += "\n";
         }
         return result;
     }

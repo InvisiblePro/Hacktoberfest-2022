@@ -28,6 +28,14 @@ public class Student extends SchoolPerson {
         }
     }
 
+    public void reviewOtherWorks() {
+
+    }
+
+    public void addWork(Work work) {
+        works.add(work);
+    }
+
     ///////////////////////////////////////////////////////////////
     // UI
 
@@ -57,6 +65,9 @@ public class Student extends SchoolPerson {
         System.out.println("1. View All Works");
         System.out.println("2. View Undone Works");
         System.out.println("3. View Done Works");
+        System.out.println("4. Do Homework");
+        System.out.println("5. Review Other Works");
+        System.out.println("6. Sign Out");
     }
 
     @Override

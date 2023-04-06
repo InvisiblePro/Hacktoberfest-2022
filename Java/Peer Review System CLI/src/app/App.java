@@ -5,12 +5,14 @@ import java.util.Scanner;
 import errors.ValueException;
 import models.PeerReviewSystem;
 import models.Student;
+import models.Teacher;
 
 /**
  * App
  */
 public class App {
 
+    // TODO: #2 Refactor
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         PeerReviewSystem schoolPeerReviewSystem = new PeerReviewSystem("Assimtion School");
@@ -39,24 +41,56 @@ public class App {
 
                     if (choice.equals("1")) {
                         String stuChoice;
-                        Student user = (Student) schoolPeerReviewSystem.getCurrentUser();
-                        Student.displayMainMenu();
+                        Student student = (Student) schoolPeerReviewSystem.getCurrentUser();
 
                         do {
+                            Student.displayMainMenu();
                             stuChoice = scanner.nextLine();
                             if (stuChoice.equals("1")) {
-                                user.viewAllWorks();
+                                student.viewAllWorks();
                             }
                             if (stuChoice.equals("2")) {
-                                user.viewUndoneWorks();
+                                student.viewUndoneWorks();
                             }
                             if (stuChoice.equals("3")) {
-                                user.viewDoneWorks();
+                                student.viewDoneWorks();
+                            }
+                            if (stuChoice.equals("4")) {
+                                student.viewUndoneWorks();
+                                System.out.print("Do Work Id: ");
+                                String wId = scanner.nextLine();
+
+                                System.out.print("Answer: ");
+                                String answer = scanner.nextLine();
+                                student.doWork(wId, answer);
+                            }
+                            if (stuChoice.equals("5")) {
+
                             }
 
-                        } while (!stuChoice.equals("-1"));
+                        } while (!stuChoice.equals("6"));
 
                     } else {
+                        String teacherChoice;
+                        Teacher teacher = (Teacher) schoolPeerReviewSystem.getCurrentUser();
+
+                        do {
+                            Teacher.displayMainMenu();
+                            teacherChoice = scanner.nextLine();
+
+                            if (teacherChoice.equals("1")) {
+                                schoolPeerReviewSystem.displayAllStudents();
+                                System.out.print("Select student Id: ");
+                                String sId = scanner.nextLine();
+                                System.out.print("Question: ");
+                                String question = scanner.nextLine();
+                                teacher.assignWorkToStudent(schoolPeerReviewSystem, sId, question);
+                            }
+                            if (teacherChoice.equals("2")) {
+
+                            }
+
+                        } while (!teacherChoice.equals(Teacher.SIGNOUT_NUMBER_STR));
 
                     }
 

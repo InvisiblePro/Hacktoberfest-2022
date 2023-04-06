@@ -3,6 +3,7 @@ package models;
 import java.util.ArrayList;
 import java.util.List;
 
+import errors.NotFoundException;
 import errors.ValueException;
 
 public class PeerReviewSystem {
@@ -77,6 +78,15 @@ public class PeerReviewSystem {
         this.currentUser = currentUser;
     }
 
+    public Student getStudentById(String sId) throws NotFoundException {
+        for (Student student : students) {
+            if (student.pId.equals(sId)) {
+                return student;
+            }
+        }
+        throw new NotFoundException("Can't find student with this id");
+    }
+
     // ///////////////////////////////////////////////////////////////
     // UI
 
@@ -102,4 +112,9 @@ public class PeerReviewSystem {
         System.out.println("3. Exit");
     }
 
+    public void displayAllStudents() {
+        for (Student student : students) {
+            System.out.println(student.toString());
+        }
+    }
 }
