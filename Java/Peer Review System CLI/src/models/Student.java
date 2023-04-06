@@ -106,6 +106,14 @@ public class Student extends SchoolPerson {
         }
     }
 
+    public void viewUnvalidatedWorks() {
+        for (Work work : works) {
+            if (work.isAnswered() && work.isReviewed() && !work.isPeerReviewValidatedByTeacher()) {
+                System.out.println(work.toString());
+            }
+        }
+    }
+
     public static void displayMainMenu() {
         System.out.println("1. View All Works");
         System.out.println("2. View Undone Works");

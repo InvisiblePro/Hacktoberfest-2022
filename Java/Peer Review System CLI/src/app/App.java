@@ -89,7 +89,10 @@ public class App {
                                 teacher.assignWorkToStudent(schoolPeerReviewSystem, sId, question);
                             }
                             if (teacherChoice.equals("2")) {
-
+                                schoolPeerReviewSystem.displayAllStudents();
+                                System.out.print("Select student Id: ");
+                                String sId = scanner.nextLine();
+                                teacher.validateReviewedWork(schoolPeerReviewSystem, scanner, sId);
                             }
 
                         } while (!teacherChoice.equals(Teacher.SIGNOUT_NUMBER_STR));
