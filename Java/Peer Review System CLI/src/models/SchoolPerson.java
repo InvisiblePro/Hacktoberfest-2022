@@ -3,9 +3,9 @@ package models;
 import errors.ValueException;
 
 public abstract class SchoolPerson {
-    String pId;
-    String password;
-    String name;
+    protected final String pId;
+    private final String password;
+    protected final String name;
 
     protected SchoolPerson(String cPId, String cPassword, String cName) {
         pId = cPId;
@@ -13,15 +13,31 @@ public abstract class SchoolPerson {
         name = cName;
     }
 
+    // ///////////////////////////////////////////////////////////////
+    // Use Cases
+
     public void trySignIn(PeerReviewSystem currentSystem, String iPId, String iPassword) throws ValueException {
         if (pId.equals(iPId) && password.equals(iPassword)) {
-            throw new ValueException("Id or Password is incorrect");
+            currentSystem.setCurrentUser(this);
+            return;
         }
-        currentSystem.currentUser = this;
+        throw new ValueException("Id or Password is incorrect");
     }
 
     public void signOut(PeerReviewSystem currentSystem) {
-        currentSystem.currentUser = null;
+        currentSystem.setCurrentUser(null);
     }
 
+    ///////////////////////////////////////////////////////////////
+    // UI
+
+    public abstract String getName();
+
+    @Override
+    public String toString() {
+        String result = "";
+        result += "PId: " + pId + "\n";
+        result += "Name: " + name + "\n";
+        return result;
+    }
 }

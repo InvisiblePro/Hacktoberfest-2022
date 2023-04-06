@@ -94,4 +94,38 @@ public class Work {
         }
     }
 
+    @Override
+    public String toString() {
+        String result = "";
+        final String dashs = "----------".repeat(3);
+        result += "Id: " + wId + "\n";
+        result += "Creator: Information \n" + creator.toString();
+        result += "Question: " + question + "\n";
+
+        if (isAnswered) {
+            result += "Answer: " + answer + "\n";
+        } else {
+            result += dashs;
+            result += "--This work is NOT DONE yet.--";
+            result += dashs;
+            return result;
+        }
+
+        if (isReviewed) {
+            result += "Reviewer: " + reviewer.getName() + "\n";
+        } else {
+            result += dashs;
+            result += "--This work is NOT REVIEWED yet.--";
+            result += dashs;
+        }
+
+        if (isPeerReviewValidatedByTeacher) {
+            result += "Validate by Teacher: " + isPeerReviewValidatedByTeacher + "\n";
+        } else {
+            result += dashs;
+            result += "--This work is NOT VALIDATED By Teacher yet.--";
+            result += dashs;
+        }
+        return result;
+    }
 }
