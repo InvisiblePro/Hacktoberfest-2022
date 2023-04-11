@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
 
+import com.sinut.authservice.core.error.NoSuchArgsBodyException;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -35,7 +37,11 @@ public class Client {
         this.password = password;
     }
 
-    public static Client fromJson(Map<String, Object> body) {
+    public static Client fromJson(Map<String, Object> body) throws NoSuchArgsBodyException {
+        if (body.get("name") == null || body.get("username") == null || body.get("password") == null) {
+            throw new NoSuchArgsBodyException("Missing some attributes");
+        }
+
         String name = body.get("name").toString();
         String username = body.get("username").toString();
         String password = body.get("password").toString();

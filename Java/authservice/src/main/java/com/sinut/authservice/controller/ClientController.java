@@ -3,8 +3,6 @@ package com.sinut.authservice.controller;
 import java.util.List;
 import java.util.Map;
 
-import javax.naming.directory.NoSuchAttributeException;
-
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,9 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sinut.authservice.core.constant.Message;
+import com.sinut.authservice.core.error.NoSuchArgsBodyException;
 import com.sinut.authservice.models.Client;
 import com.sinut.authservice.models.Role;
-import com.sinut.authservice.repo.RoleRepo;
 import com.sinut.authservice.service.ClientService;
 
 import lombok.RequiredArgsConstructor;
@@ -39,9 +38,15 @@ public class ClientController {
     @CrossOrigin
     @PostMapping("/user/add")
     public @ResponseBody String saveUsers(@RequestBody Map<String, Object> body) {
-        Client client = Client.fromJson(body);
-        clientService.saveUser(client);
-        return "Ok";
+        Client client;
+        try {
+            client = Client.fromJson(body);
+            clientService.saveUser(client);
+            return "Ok";
+        } catch (NoSuchArgsBodyException e) {
+            log.error(Message.MISSING_ATTRIBUTES, e);
+            return Message.MISSING_ATTRIBUTES;
+        }
     }
 
     @CrossOrigin
@@ -51,17 +56,25 @@ public class ClientController {
             Role role = Role.fromJson(body);
             clientService.saveRole(role);
             return "Ok";
-        } catch (NoSuchAttributeException e) {
-            log.error("Some attributes are missing", e);
-            return "Some attributes are missing";
+        } catch (NoSuchArgsBodyException e) {
+            log.error(Message.MISSING_ATTRIBUTES, e);
+            return Message.MISSING_ATTRIBUTES;
         }
     }
 
     @CrossOrigin
     @PostMapping("/user/add-role")
     public @ResponseBody String addRoleToUser(@RequestBody Map<String, Object> body) {
-        clientService.addRoleToUser(body.get("username").toString(), body.get("rolename").toString());
-        return "Ok";
+        try {
+            if (body.get("username") == null || body.get("rolename") == null) {
+                throw new NoSuchArgsBodyException(Message.MISSING_ATTRIBUTES);
+            }
+            clientService.addRoleToUser(body.get("username").toString(), body.get("rolename").toString());
+            return "Ok";
+        } catch (NoSuchArgsBodyException e) {
+            log.error(Message.MISSING_ATTRIBUTES, e);
+            return Message.MISSING_ATTRIBUTES;
+        }
     }
 
     @CrossOrigin

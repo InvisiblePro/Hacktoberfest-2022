@@ -2,7 +2,7 @@ package com.sinut.authservice.models;
 
 import java.util.Map;
 
-import javax.naming.directory.NoSuchAttributeException;
+import com.sinut.authservice.core.error.NoSuchArgsBodyException;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -25,9 +25,9 @@ public class Role {
         this.name = name;
     }
 
-    public static Role fromJson(Map<String, Object> body) throws NoSuchAttributeException {
+    public static Role fromJson(Map<String, Object> body) throws NoSuchArgsBodyException {
         if (body.get("name") == null) {
-            throw new NoSuchAttributeException("No Name is given");
+            throw new NoSuchArgsBodyException("No Name is given");
         }
         return new Role(body.get("name").toString());
     }
