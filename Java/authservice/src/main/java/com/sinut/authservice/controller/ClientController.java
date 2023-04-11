@@ -3,6 +3,7 @@ package com.sinut.authservice.controller;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -31,55 +32,55 @@ public class ClientController {
 
     @CrossOrigin
     @GetMapping("/users")
-    public @ResponseBody List<Client> getUsers() {
-        return clientService.getUsers();
+    public ResponseEntity<List<Client>> getUsers() {
+        return ResponseEntity.ok(clientService.getUsers());
     }
 
     @CrossOrigin
     @PostMapping("/user/add")
-    public @ResponseBody String saveUsers(@RequestBody Map<String, Object> body) {
+    public ResponseEntity<String> saveUsers(@RequestBody Map<String, Object> body) {
         Client client;
         try {
             client = Client.fromJson(body);
             clientService.saveUser(client);
-            return "Ok";
+            return ResponseEntity.ok("Ok");
         } catch (NoSuchArgsBodyException e) {
             log.error(Message.MISSING_ATTRIBUTES, e);
-            return Message.MISSING_ATTRIBUTES;
+            return ResponseEntity.badRequest().body(Message.MISSING_ATTRIBUTES);
         }
     }
 
     @CrossOrigin
     @PostMapping("/role/add")
-    public @ResponseBody String saveRole(@RequestBody Map<String, Object> body) {
+    public ResponseEntity<String> saveRole(@RequestBody Map<String, Object> body) {
         try {
             Role role = Role.fromJson(body);
             clientService.saveRole(role);
-            return "Ok";
+            return ResponseEntity.ok("Ok");
         } catch (NoSuchArgsBodyException e) {
             log.error(Message.MISSING_ATTRIBUTES, e);
-            return Message.MISSING_ATTRIBUTES;
+            return ResponseEntity.badRequest().body(Message.MISSING_ATTRIBUTES);
         }
     }
 
     @CrossOrigin
     @PostMapping("/user/add-role")
-    public @ResponseBody String addRoleToUser(@RequestBody Map<String, Object> body) {
+    public ResponseEntity<String> addRoleToUser(@RequestBody Map<String, Object> body) {
         try {
             if (body.get("username") == null || body.get("rolename") == null) {
                 throw new NoSuchArgsBodyException(Message.MISSING_ATTRIBUTES);
             }
             clientService.addRoleToUser(body.get("username").toString(), body.get("rolename").toString());
-            return "Ok";
+            return ResponseEntity.ok("Ok");
         } catch (NoSuchArgsBodyException e) {
             log.error(Message.MISSING_ATTRIBUTES, e);
-            return Message.MISSING_ATTRIBUTES;
+            return ResponseEntity.badRequest().body(Message.MISSING_ATTRIBUTES);
         }
     }
 
     @CrossOrigin
     @GetMapping("/user/{username}")
-    public @ResponseBody Client getUser(@PathVariable("username") String username) {
-        return clientService.getUser(username);
+    public ResponseEntity<Client> getUser(@PathVariable("username") String username) {
+        return ResponseEntity.ok(clientService.getUser(username));
     }
 }
