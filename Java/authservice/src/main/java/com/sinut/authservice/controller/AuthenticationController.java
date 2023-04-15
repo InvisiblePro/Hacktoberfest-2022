@@ -12,22 +12,28 @@ import com.sinut.authservice.model.api.RegisterRequest;
 import com.sinut.authservice.service.AuthenticationService;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @RequestMapping("/api/auth")
 @RequiredArgsConstructor
+@Slf4j
 public class AuthenticationController {
 
-    private AuthenticationService authService;
+    private final AuthenticationService authService;
 
     @PostMapping("/register")
     public ResponseEntity<AuthenticationResponse> register(@RequestBody RegisterRequest request) {
-        return null;
+        log.info("[Controller Register]: " + request.toString());
+
+        return ResponseEntity.ok(authService.register(request));
     }
 
-    @PostMapping("/authentication")
-    public ResponseEntity<AuthenticationResponse> register(@RequestBody AuthenticationRequest request) {
-        return null;
+    @PostMapping("/authenticate")
+    public ResponseEntity<AuthenticationResponse> authenticate(@RequestBody AuthenticationRequest request) {
+        log.info("[Controller Authenticate]: " + request.toString());
+
+        return ResponseEntity.ok(authService.authenticate(request));
     }
 
 }

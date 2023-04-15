@@ -21,11 +21,15 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+
+        // This route be found on RequestMapping on Authentication Controller
+        final String AUTH_ROUTE = "/api/auth/**";
+
         http
                 .csrf()
                 .disable()
                 .authorizeHttpRequests()
-                .requestMatchers("")
+                .requestMatchers(AUTH_ROUTE)
                 .permitAll()
                 .anyRequest()
                 .authenticated()

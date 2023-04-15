@@ -1,7 +1,5 @@
 package com.sinut.authservice.service;
 
-import java.util.Optional;
-
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -15,9 +13,11 @@ import com.sinut.authservice.model.entity.Client;
 import com.sinut.authservice.repository.ClientRepository;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class AuthenticationService {
 
     private final ClientRepository clientRepo;
@@ -26,6 +26,8 @@ public class AuthenticationService {
     private final AuthenticationManager authManager;
 
     public AuthenticationResponse register(RegisterRequest request) {
+        log.info("[Service]: " + request.toString());
+
         Client client = Client
                 .builder()
                 .name(request.getFirstname() + " " + request.getLastname())
